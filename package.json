@@ -1,0 +1,21 @@
+{
+  "name": "test-system",
+  "version": "2.0.0",
+  "description": "CSS compiler for the TestSystem system",
+  "scripts": {
+    "build": "sass src/scss/test-system.scss css/test-system.css --style=expanded --no-source-map",
+    "watch": "sass src/scss/test-system.scss css/test-system.css --style=expanded --source-map --watch"
+  },
+  "browserslist": [
+    "last 3 versions"
+  ],
+  "author": "Asacolips",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "sass": "^1.77.6",
+    "@types/node": "20.14.8",
+    "@league-of-foundry-developers/foundry-vtt-types": "^9.280.0",
+    "typescript": "^5.5.2"
+  }
+}
