@@ -19,8 +19,13 @@ jobs:
     - name: Extract version number
       id: extract_version
       run: |
-        VERSION=$(jq -r '.version' system.json)
+        VERSION=$(jq -r '.version' version.json)
         echo "VERSION=v$VERSION" >> $GITHUB_ENV
+
+    - name: Set up Git config
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
     - name: Create Tag
       id: create_tag
