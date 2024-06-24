@@ -1,0 +1,41 @@
+name: Create Release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  create-release:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Install jq
+      run: sudo apt-get install -y jq
+
+    - name: Extract version number
+      id: extract_version
+      run: |
+        VERSION=$(jq -r '.version' system.json)
+        echo "VERSION=v$VERSION" >> $GITHUB_ENV
+
+    - name: Create Tag
+      id: create_tag
+      run: |
+        git tag -a ${{ env.VERSION }} -m "Release ${{ env.VERSION }}"
+        git push origin ${{ env.VERSION }}
+
+    - name: Create GitHub Release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ env.VERSION }}
+        release_name: Release ${{ env.VERSION }}
+        body: |
+          Release version ${{ env.VERSION }}
+        draft: false
+        prerelease: false
