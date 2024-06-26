@@ -1,5 +1,5 @@
 import TestSystemDataModel from "./base-model.mjs";
-import { NumberField, SchemaField, StringField, DataField } from foundry.data.fields;
+const { NumberField, SchemaField, StringField, DataField } = foundry.data.fields;
 
 export default class TestSystemActorBase extends TestSystemDataModel {
 

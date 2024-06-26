@@ -1,11 +1,8 @@
 import TestSystemActorBase from "./base-actor.mjs";
-import { NumberField, SchemaField } from foundry.data.fields;
-
 export default class TestSystemCharacter extends TestSystemActorBase {
 
   static defineSchema() {
     const fields = foundry.data.fields;
-    const requiredInteger = { required: true, nullable: false, integer: true };
     const schema = super.defineSchema();
 
     schema.attributes = this.createSchemaField({
