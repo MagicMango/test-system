@@ -15,7 +15,6 @@
   "devDependencies": {
     "sass": "^1.77.6",
     "@types/node": "20.14.8",
-    "@league-of-foundry-developers/foundry-vtt-types": "^9.280.0",
     "typescript": "^5.5.2"
   }
 }

@@ -146,6 +146,7 @@ export class TestSystemActorSheet extends ActorSheet {
   /* -------------------------------------------- */
 
   /** @override */
+  /**  @param { JQuery } html **/
   activateListeners(html) {
     super.activateListeners(html);
 
