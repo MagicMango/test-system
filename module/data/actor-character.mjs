@@ -1,5 +1,5 @@
 import TestSystemActorBase from "./base-actor.mjs";
-const { NumberField, SchemaField } = foundry.data.fields;
+import { NumberField, SchemaField } from foundry.data.fields;
 
 export default class TestSystemCharacter extends TestSystemActorBase {
 
@@ -8,32 +8,30 @@ export default class TestSystemCharacter extends TestSystemActorBase {
     const requiredInteger = { required: true, nullable: false, integer: true };
     const schema = super.defineSchema();
 
-    schema.attributes = new fields.SchemaField({
-      level: new fields.SchemaField({
-        value: new fields.NumberField({ ...requiredInteger, initial: 1 })
+    schema.attributes = this.createSchemaField({
+      level: this.createSchemaField({
+        value: this.createRequiredNumberField(1)
       }),
     });
 
     // Iterate over ability names and create a new SchemaField for each.
     schema.abilities = new fields.SchemaField(Object.keys(CONFIG.TEST_SYSTEM.abilities).reduce((obj, ability) => {
       obj[ability] = new fields.SchemaField({
-        value: new fields.NumberField({ ...requiredInteger, initial: 10, min: 0 }),
+        value: this.createRequiredNumberField(10, 0),
       });
       return obj;
     }, {}));
-   
-    schema.age = super.createRequiredNumberField(25, 18);
-    schema.species = super.createRequiredStringField();
-    schema.nation = super.createRequiredStringField();
-    schema.profession = super.createRequiredStringField();
 
-    schema.tricks = new SchemaField({
-      firstTrick: super.createRequiredStringField(),
-      secondTrick: super.createRequiredStringField(),
-      thirdTrick: super.createRequiredStringField()
+    schema.age = this.createRequiredNumberField(25, 18);
+    schema.species = this.createRequiredStringField();
+    schema.nation = this.createRequiredStringField();
+    schema.profession = this.createRequiredStringField();
+
+    schema.tricks = this.createSchemaField({
+      firstTrick: this.createRequiredStringField(),
+      secondTrick: this.createRequiredStringField(),
+      thirdTrick: this.createRequiredStringField()
     });
-
-    console.log(schema);
 
     return schema;
   }
@@ -54,7 +52,7 @@ export default class TestSystemCharacter extends TestSystemActorBase {
     // Copy the ability scores to the top level, so that rolls can use
     // formulas like `@str.mod + 4`.
     if (this.abilities) {
-      for (let [k,v] of Object.entries(this.abilities)) {
+      for (let [k, v] of Object.entries(this.abilities)) {
         data[k] = foundry.utils.deepClone(v);
       }
     }

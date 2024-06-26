@@ -36,11 +36,11 @@
   "packFolders": [],
   "socket": false,
   "manifest": "https://raw.githubusercontent.com/MagicMango/test-system/main/system.json",
-  "version": "2.0.13",
-  "download": "https://github.com/MagicMango/test-system/archive/refs/tags/v2.0.13.zip",
+  "version": "2.0.14",
+  "download": "https://github.com/MagicMango/test-system/archive/refs/tags/v2.0.14.zip",
   "background": "systems/test-system/assets/anvil-impact.png",
   "gridDistance": 5,
-  "gridUnits": "ft",
+  "gridUnits": "cm",
   "primaryTokenAttribute": "health",
   "secondaryTokenAttribute": "power"
 }

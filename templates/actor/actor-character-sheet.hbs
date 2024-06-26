@@ -45,6 +45,34 @@
           </div>
         </div>
 
+        <div class="resource flex-group-center">
+          <label for="system.species" class="resource-label">Spezies</label>
+          <div class="resource-content flexrow flex-center flex-between">
+          <input type="text" name="system.species" value="{{system.age}}" data-dtype="Text"/>
+          </div>
+        </div>
+
+        <div class="resource flex-group-center">
+          <label for="system.species" class="resource-label">Spezies</label>
+          <div class="resource-content flexrow flex-center flex-between">
+          <input type="text" name="system.species" value="{{system.age}}" data-dtype="Text"/>
+          </div>
+        </div>
+
+        <div class="resource flex-group-center">
+          <label for="system.nation" class="resource-label">Nation</label>
+          <div class="resource-content flexrow flex-center flex-between">
+          <input type="text" name="system.nation" value="{{system.age}}" data-dtype="Text"/>
+          </div>
+        </div>
+
+        <h3>Tricks</h3>
+        {{#each system.tricks as |trick key|}}
+            <div class="ability flexrow flex-group-center">
+              <input type="text" name="system.tricks.{{key}}.value" value="{{trick}}" data-dtype="Trick"/>
+            </div>
+        {{/each}}
+
       </div>
     </div>
   </header>

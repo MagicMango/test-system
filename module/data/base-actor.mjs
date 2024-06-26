@@ -1,16 +1,16 @@
 import TestSystemDataModel from "./base-model.mjs";
-const { NumberField, SchemaField, StringField } = foundry.data.fields;
+import { NumberField, SchemaField, StringField, DataField } from foundry.data.fields;
 
 export default class TestSystemActorBase extends TestSystemDataModel {
 
   static defineSchema() {
     const schema = {};
 
-    schema.health = new SchemaField({
+    schema.health = this.createSchemaField({
       value: this.createRequiredNumberField(10, 0),
       max: this.createRequiredNumberField(10)
     });
-    schema.power = new SchemaField({
+    schema.power = this.createSchemaField({
       value: this.createRequiredNumberField(5, 5),
       max: this.createRequiredNumberField(5)
     });
@@ -37,6 +37,14 @@ export default class TestSystemActorBase extends TestSystemDataModel {
     var initialValue = initial || 0;
     var minValue = min;
     return new NumberField({ ...requiredInteger, initial: initialValue, min: minValue });
+  }
+
+  /** 
+   * @param {{[key: string]: DataField}} schemaFieldObject
+   * @returns {SchemaField}
+   * **/
+  static createSchemaField(schemaFieldObject) {
+    return new SchemaField(schemaFieldObject);
   }
 
 }
