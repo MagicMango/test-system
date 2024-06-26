@@ -7,15 +7,11 @@ export default class TestSystemActorBase extends TestSystemDataModel {
     const schema = {};
 
     schema.health = this.createSchemaField({
-      value: this.createRequiredNumberField(10, 0),
-      max: this.createRequiredNumberField(10)
+      value: this.createRequiredNumberField(32, 0),
+      max: this.createRequiredNumberField(32)
     });
-    schema.power = this.createSchemaField({
-      value: this.createRequiredNumberField(5, 5),
-      max: this.createRequiredNumberField(5)
-    });
+
     schema.biography = this.createRequiredStringField();
-    
 
     return schema;
   }

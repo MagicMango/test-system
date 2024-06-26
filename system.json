@@ -8,7 +8,7 @@
       "discord": "magischemango"
     }
   ],
-  "url": "Replace this with a link to your public repository",
+  "url": "https://github.com/MagicMango/test-system",
   "license": "LICENSE.txt",
   "readme": "README.md",
   "changelog": "CHANGELOG.md",
@@ -36,11 +36,11 @@
   "packFolders": [],
   "socket": false,
   "manifest": "https://raw.githubusercontent.com/MagicMango/test-system/main/system.json",
-  "version": "2.0.16",
-  "download": "https://github.com/MagicMango/test-system/archive/refs/tags/v2.0.16.zip",
+  "version": "2.0.17",
+  "download": "https://github.com/MagicMango/test-system/archive/refs/tags/v2.0.17.zip",
   "background": "systems/test-system/assets/anvil-impact.png",
   "gridDistance": 5,
   "gridUnits": "cm",
   "primaryTokenAttribute": "health",
-  "secondaryTokenAttribute": "power"
+  "secondaryTokenAttribute": null
 }

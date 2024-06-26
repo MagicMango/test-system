@@ -23,6 +23,7 @@ export default class TestSystemCharacter extends TestSystemActorBase {
     schema.species = this.createRequiredStringField();
     schema.nation = this.createRequiredStringField();
     schema.profession = this.createRequiredStringField();
+    schema.tic = this.createRequiredStringField();
 
     schema.tricks = this.createSchemaField({
       firstTrick: this.createRequiredStringField(),
