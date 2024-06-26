@@ -6,6 +6,7 @@ import { TestSystemActorSheet } from './sheets/actor-sheet.mjs';
 import { TestSystemItemSheet } from './sheets/item-sheet.mjs';
 // Import helper/utility classes and constants.
 import { preloadHandlebarsTemplates } from './helpers/templates.mjs';
+import { TEST_SYSTEM } from './helpers/config.mjs'
 // Import DataModel classes
 import * as models from './data/_module.mjs';
 
