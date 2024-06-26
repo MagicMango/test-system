@@ -21,7 +21,7 @@ export default class TestSystemCharacter extends TestSystemActorBase {
       });
       return obj;
     }, {}));
-
+   
     schema.age = super.createRequiredNumberField(25, 18);
     schema.species = super.createRequiredStringField();
     schema.nation = super.createRequiredStringField();
@@ -32,6 +32,8 @@ export default class TestSystemCharacter extends TestSystemActorBase {
       secondTrick: super.createRequiredStringField(),
       thirdTrick: super.createRequiredStringField()
     });
+
+    console.log(schema);
 
     return schema;
   }
