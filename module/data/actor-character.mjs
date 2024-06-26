@@ -1,5 +1,5 @@
 import TestSystemActorBase from "./base-actor.mjs";
-import { NumberField, SchemaField } from foundry.data.fields;
+const { NumberField, SchemaField } = foundry.data.fields;
 
 export default class TestSystemCharacter extends TestSystemActorBase {
 
