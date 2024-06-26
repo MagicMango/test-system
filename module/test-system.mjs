@@ -30,13 +30,13 @@ Hooks.once('init', function () {
    * Set an initiative formula for the system
    * @type {String}
    */
-  CONFIG.TEST_SYSTEM.Combat.initiative = {
+  CONFIG.Combat.initiative = {
     formula: '1d20 + @abilities.dex.mod',
     decimals: 2,
   };
 
   // Define custom Document and DataModel classes
-  CONFIG.TEST_SYSTEM.Actor.documentClass = TestSystemActor;
+  CONFIG.Actor.documentClass = TestSystemActor;
 
   // Note that you don't need to declare a DataModel
   // for the base actor/item classes - they are included
