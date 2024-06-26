@@ -6,7 +6,6 @@ import { TestSystemActorSheet } from './sheets/actor-sheet.mjs';
 import { TestSystemItemSheet } from './sheets/item-sheet.mjs';
 // Import helper/utility classes and constants.
 import { preloadHandlebarsTemplates } from './helpers/templates.mjs';
-import { TEST_SYSTEM } from './helpers/config.mjs';
 // Import DataModel classes
 import * as models from './data/_module.mjs';
 
@@ -30,13 +29,13 @@ Hooks.once('init', function () {
    * Set an initiative formula for the system
    * @type {String}
    */
-  CONFIG.Combat.initiative = {
+  CONFIG.TEST_SYSTEM.Combat.initiative = {
     formula: '1d20 + @abilities.dex.mod',
     decimals: 2,
   };
 
   // Define custom Document and DataModel classes
-  CONFIG.Actor.documentClass = TestSystemActor;
+  CONFIG.TEST_SYSTEM.Actor.documentClass = TestSystemActor;
 
   // Note that you don't need to declare a DataModel
   // for the base actor/item classes - they are included
