@@ -49,32 +49,33 @@
         <div class="resource flex-group-center">
           <label for="system.species" class="resource-label">Spezies</label>
           <div class="resource-content flexrow flex-center flex-between">
-            <input type="text" name="system.species" value="{{system.age}}" data-dtype="Text" />
+            <input type="text" name="system.species" value="{{system.species}}" />
           </div>
         </div>
 
         <div class="resource flex-group-center">
-          <label for="system.species" class="resource-label">Spezies</label>
+          <label for="system.profession" class="resource-label">Profession</label>
           <div class="resource-content flexrow flex-center flex-between">
-            <input type="text" name="system.species" value="{{system.age}}" data-dtype="Text" />
+            <input type="text" name="system.profession" value="{{system.profession}}" />
           </div>
         </div>
 
         <div class="resource flex-group-center">
           <label for="system.nation" class="resource-label">Nation</label>
           <div class="resource-content flexrow flex-center flex-between">
-            <input type="text" name="system.nation" value="{{system.age}}" data-dtype="Text" />
+            <input type="text" name="system.nation" value="{{system.nation}}" />
           </div>
         </div>
 
-        <h3>Tricks</h3>
-        {{#each system.tricks as |trick key|}}
         <div class="resource flex-group-center">
-          <div class="ability flexrow flex-group-center">
-            <input type="text" name="system.tricks.{{key}}.value" value="{{trick}}" data-dtype="Trick" />
-          </div>
+          <h3>Tricks</h3>
+          {{#each system.tricks as |trick key|}}
+            <div class="ability flexrow flex-group-center">
+              <input type="text" name="system.tricks.{{key}}" value="{{trick}}" />
+            </div>
+          {{/each}}
         </div>
-        {{/each}}
+
 
       </div>
     </div>
